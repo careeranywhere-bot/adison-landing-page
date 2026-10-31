@@ -1,0 +1,5 @@
+# Original full-size show unit photos (web copies live in images/units)
+photo/
+
+# Local Claude preview settings
+.claude/

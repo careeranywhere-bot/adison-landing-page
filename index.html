@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adison · W City Larkinton</title>
+<meta name="description" content="Adison freehold serviced apartments at W City Larkinton, Johor Bahru. From RM 382,000. WhatsApp for price list, floor plans and viewing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f2ec;
+    --surface: #ffffff;
+    --ink: #1e2438;
+    --muted: #5f6475;
+    --line: #e4ddd2;
+    --navy: #2b3654;
+    --navy-deep: #1d253c;
+    --navy-ink: #f4efe8;
+    --copper: #e39a72;
+    --copper-deep: #c97a52;
+    --wa: #25d366;
+    --wa-dark: #128c4b;
+    --radius: 14px;
+    --display: "Cinzel", "Noto Serif SC", Georgia, serif;
+    --sans: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  }
+  html[lang="zh"] { --display: "Noto Serif SC", "Cinzel", serif; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 20; background: rgba(29,37,60,.94); backdrop-filter: blur(8px); color: var(--navy-ink); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .logo { text-decoration: none; line-height: 1.1; }
+  .logo b { display: block; font-family: "Cinzel", serif; font-size: 22px; font-weight: 600; letter-spacing: .14em; color: var(--copper); }
+  .logo small { display: block; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: rgba(244,239,232,.7); }
+  .nav-links { display: flex; gap: 26px; font-size: 14px; }
+  .nav-links a { text-decoration: none; color: rgba(244,239,232,.75); }
+  .nav-links a:hover { color: var(--copper); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .lang { display: flex; border: 1px solid rgba(244,239,232,.3); border-radius: 999px; overflow: hidden; }
+  .lang button { border: 0; background: transparent; padding: 6px 12px; font: 500 13px var(--sans); color: rgba(244,239,232,.75); cursor: pointer; }
+  .lang button.on { background: var(--copper); color: var(--navy-deep); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 999px; padding: 14px 26px; font: 600 15px var(--sans); text-decoration: none; cursor: pointer; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-wa { background: var(--wa); color: #fff; }
+  .btn-wa:hover { background: var(--wa-dark); }
+  .btn-ghost { background: transparent; color: var(--navy-ink); border: 1px solid rgba(244,239,232,.55); }
+  .btn-sm { padding: 8px 16px; font-size: 13px; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* Hero */
+  .hero { position: relative; color: var(--navy-ink); background: var(--navy-deep) url("images/aerial.jpeg") center 30%/cover no-repeat; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(29,37,60,.92) 0%, rgba(29,37,60,.7) 50%, rgba(29,37,60,.25) 100%); }
+  .hero .wrap { position: relative; padding-top: 96px; padding-bottom: 150px; }
+  .eyebrow { display: inline-flex; gap: 10px; align-items: center; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--copper); margin-bottom: 18px; }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--copper); }
+  .hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(44px, 8vw, 84px); line-height: 1; letter-spacing: .06em; margin: 0 0 6px; color: var(--copper); }
+  .hero .tag { font-family: var(--display); font-size: clamp(16px, 2.4vw, 22px); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 24px; }
+  html[lang="zh"] .hero .tag { letter-spacing: .3em; }
+  .hero p { font-size: 18px; max-width: 540px; color: rgba(244,239,232,.86); margin: 0 0 18px; }
+  .price { display: inline-block; margin: 6px 0 30px; padding: 10px 18px; border: 1px solid var(--copper); border-radius: 10px; font-size: 15px; }
+  .price b { font-size: 26px; color: var(--copper); font-weight: 600; margin-left: 6px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Stats */
+  .stats { position: relative; z-index: 2; margin-top: -60px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border-radius: var(--radius); box-shadow: 0 20px 50px rgba(29,37,60,.14); }
+  .stat { padding: 24px 22px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat b { display: block; font-family: var(--display); font-size: 26px; color: var(--navy); font-weight: 600; }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  section { padding: 96px 0; scroll-margin-top: 64px; }
+  .sec-head { max-width: 660px; margin-bottom: 44px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--copper-deep); font-weight: 600; }
+  .sec-head h2 { font-family: var(--display); font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; margin: 6px 0 12px; line-height: 1.15; color: var(--navy); }
+  .sec-head p { color: var(--muted); margin: 0; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+  .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: 0 20px 50px rgba(29,37,60,.15); }
+  .about-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .points { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 14px; }
+  .points li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
+  .points .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: #f3e4da; color: var(--copper-deep); }
+  .points .ic svg { width: 20px; height: 20px; }
+  .points b { display: block; color: var(--navy); }
+  .points span { color: var(--muted); font-size: 15px; }
+  .award { margin-top: 26px; display: flex; gap: 12px; align-items: center; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; font-size: 14px; }
+  .award svg { width: 32px; height: 32px; color: var(--copper-deep); flex: none; }
+
+  /* Units */
+  .units-bg { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .units { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .unit { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; background: var(--bg); }
+  .unit-top { padding: 24px 26px; background: linear-gradient(150deg, var(--navy), var(--navy-deep)); color: var(--navy-ink); }
+  .unit-top small { color: var(--copper); letter-spacing: .14em; text-transform: uppercase; font-size: 11px; }
+  .unit-top h3 { font-family: var(--display); font-size: 26px; margin: 4px 0 0; font-weight: 600; }
+  .unit-top .sz { font-size: 15px; color: rgba(244,239,232,.8); }
+  .plan-box { background: #eceef0; padding: 14px 14px 10px; border-bottom: 1px solid var(--line); }
+  .plan-tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+  .plan-tabs button { flex: 1; border: 1px solid #cfd3da; background: #fff; color: var(--muted); border-radius: 999px; padding: 6px 8px; font: 500 13px var(--sans); cursor: pointer; }
+  .plan-tabs button.on { background: var(--navy); border-color: var(--navy); color: var(--navy-ink); }
+  .plan-img { display: block; width: 100%; border: 0; padding: 0; background: none; cursor: zoom-in; }
+  .plan-img img { width: 100%; height: 260px; object-fit: contain; }
+  .plan-img span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); text-align: center; }
+  /* Interactive site plan */
+  .sp-modes { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 4px; background: var(--bg); margin-bottom: 16px; }
+  .sp-modes button { border: 0; background: none; padding: 8px 18px; border-radius: 999px; font: 500 14px var(--sans); color: var(--muted); cursor: pointer; }
+  .sp-modes button.on { background: var(--navy); color: var(--navy-ink); }
+  .sp-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr); gap: 24px; align-items: start; }
+  .sp-grid > * { min-width: 0; }
+  .sp-scroll { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+  .sp-map { position: relative; min-width: 640px; }
+  .sp-map img { width: 100%; height: auto; }
+  .sp-u { position: absolute; border: 2px solid transparent; border-radius: 3px; background: transparent; padding: 0; cursor: pointer; transition: background .15s, border-color .15s; }
+  .sp-u:hover, .sp-u:focus-visible { border-color: var(--copper-deep); background: rgba(227,154,114,.25); outline: none; }
+  .sp-u.sel { border-color: #fff; background: rgba(201,122,82,.75); box-shadow: 0 0 0 2px var(--copper-deep), 0 4px 14px rgba(0,0,0,.3); z-index: 2; }
+  .sp-map[data-mode="view"] .sp-u { border-color: rgba(255,255,255,.7); }
+  .sp-map[data-mode="view"] .sp-u.f-P { background: rgba(32,150,170,.55); }
+  .sp-map[data-mode="view"] .sp-u.f-N { background: rgba(230,160,40,.6); }
+  .sp-map[data-mode="view"] .sp-u.f-S { background: rgba(70,150,70,.6); }
+  .sp-map[data-mode="view"] .sp-u.sel { background: rgba(201,122,82,.85); }
+  .sp-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 12px; font-size: 13px; }
+  .sp-legend span { display: inline-flex; gap: 6px; align-items: center; }
+  .sp-legend i { width: 14px; height: 14px; border-radius: 3px; }
+  .sp-legend b { font-weight: 500; }
+  .lg-P { background: rgb(32,150,170); } .lg-N { background: rgb(230,160,40); } .lg-S { background: rgb(70,150,70); }
+  .sp-hint { color: var(--muted); margin-left: auto; }
+  .sp-panel { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; position: sticky; top: 80px; }
+  .sp-view { position: relative; }
+  .sp-view img { width: 100%; height: 190px; object-fit: cover; }
+  .sp-view small { position: absolute; left: 10px; bottom: 8px; background: rgba(0,0,0,.55); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 999px; }
+  .sp-body { padding: 18px 20px 20px; }
+  .sp-body h3 { font-family: var(--display); color: var(--navy); font-size: 24px; margin: 0; }
+  .sp-body .sub { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .sp-face { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: 10px; background: #fff; border: 1px solid var(--line); margin-bottom: 10px; font-size: 14px; }
+  .sp-face i { width: 12px; height: 12px; border-radius: 3px; margin-top: 5px; flex: none; }
+  .sp-face b { display: block; color: var(--navy); }
+  .sp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .sp-tags span { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: #f3e4da; color: var(--copper-deep); font-weight: 600; }
+  .sp-plan { display: block; width: 100%; border: 1px solid var(--line); border-radius: 10px; background: #eceef0; padding: 8px; cursor: zoom-in; margin-bottom: 14px; }
+  .sp-plan img { width: 100%; height: 150px; object-fit: contain; }
+  .sp-body .btn { width: 100%; }
+  .sp-empty { padding: 40px 24px; text-align: center; color: var(--muted); }
+  .sp-empty svg { width: 48px; height: 48px; color: var(--copper); margin-bottom: 10px; }
+  @media (max-width: 900px) { .sp-grid { grid-template-columns: minmax(0, 1fr); } .sp-panel { position: static; } }
+  .tower-tabs, .gal-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .tower-tabs button, .gal-tabs button { border: 1px solid var(--line); background: var(--surface); color: var(--navy); border-radius: 999px; padding: 10px 22px; font: 600 14px var(--sans); cursor: pointer; letter-spacing: .04em; }
+  .tower-tabs button.on, .gal-tabs button.on { background: var(--navy); border-color: var(--navy); color: var(--copper); }
+  .tower-img { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; cursor: zoom-in; }
+  .tower-img img { width: 100%; height: auto; }
+  .tower-legend { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin: 14px 0 24px; font-size: 14px; }
+  .tower-legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .tower-legend i { width: 18px; height: 18px; border-radius: 4px; border: 1px solid rgba(0,0,0,.08); }
+  .tower-legend b { font-weight: 500; }
+  .tower-hint { color: var(--muted); font-size: 13px; margin-left: auto; }
+  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(20,25,40,.88); display: grid; place-items: center; padding: 20px; cursor: zoom-out; }
+  .lightbox[hidden] { display: none; }
+  .lightbox img { max-width: calc(100vw - 40px); max-height: calc(100vh - 40px); background: #eceef0; border-radius: 10px; }
+  .lightbox button { position: absolute; border: 0; background: none; color: #fff; line-height: 1; cursor: pointer; }
+  .lb-close { top: 14px; right: 18px; font-size: 36px; }
+  .lb-nav { top: 50%; transform: translateY(-50%); width: 48px; height: 64px; font-size: 44px; background: rgba(0,0,0,.35) !important; border-radius: 10px; display: none; }
+  .lb-prev { left: 12px; } .lb-next { right: 12px; }
+  .lightbox.gal .lb-nav { display: block; }
+  .lb-cap { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; color: #fff; font-size: 14px; text-shadow: 0 1px 4px rgba(0,0,0,.6); pointer-events: none; }
+  .lightbox.gal img { max-height: calc(100vh - 90px); background: #000; }
+  /* Show unit gallery */
+  .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; grid-auto-flow: dense; gap: 10px; margin-bottom: 24px; }
+  .gal-item { position: relative; border: 0; padding: 0; border-radius: 12px; overflow: hidden; cursor: zoom-in; background: #ddd; }
+  .gal-item.tall { grid-row: span 2; }
+  .gal-item.wide { grid-column: span 2; }
+  .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .gal-item:hover img { transform: scale(1.04); }
+  .gal-item span { position: absolute; left: 8px; bottom: 8px; background: rgba(29,37,60,.75); color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+  .unit-cover { position: relative; display: block; width: 100%; border: 0; padding: 0; cursor: pointer; background: #ddd; }
+  .unit-cover img { width: 100%; height: 190px; object-fit: cover; }
+  .unit-cover span { position: absolute; right: 10px; bottom: 10px; background: rgba(29,37,60,.8); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
+  @media (max-width: 900px) { .gal-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; } }
+  .unit ul { list-style: none; margin: 0; padding: 20px 26px; flex: 1; }
+  .unit li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
+  .unit li:last-child { border-bottom: 0; }
+  .unit li span:first-child { color: var(--muted); }
+  .unit li span:last-child { text-align: right; }
+  .unit .btn { margin: 0 26px 26px; }
+  .fine { font-size: 13px; color: var(--muted); margin: 20px 0 0; }
+
+  /* Facilities */
+  .fac-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 36px; }
+  .fac-hero figure { margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+  .fac-hero img { width: 100%; height: 280px; object-fit: cover; }
+  .fac-hero .plan img { object-fit: contain; padding: 12px; background: #fff; }
+  .fac-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; list-style: none; padding: 0; margin: 0; }
+  .fac-list li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 15px; display: flex; gap: 10px; align-items: center; }
+  .fac-list li::before { content: counter(f); counter-increment: f; font: 600 12px var(--sans); color: var(--navy-ink); background: var(--navy); width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+  .fac-list { counter-reset: f; }
+  .specs { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .spec { padding: 16px; border-left: 3px solid var(--copper); background: var(--surface); border-radius: 0 10px 10px 0; font-size: 14px; }
+  .spec b { display: block; color: var(--navy); font-size: 15px; }
+
+  /* Location */
+  .loc-bg { background: var(--navy); color: var(--navy-ink); }
+  .loc-bg .sec-head h2 { color: var(--navy-ink); }
+  .loc-bg .sec-head p { color: rgba(244,239,232,.75); }
+  .loc-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+  .loc-big { padding: 24px; border: 1px solid rgba(244,239,232,.2); border-radius: var(--radius); }
+  .loc-big b { display: block; font-family: var(--display); font-size: 36px; color: var(--copper); font-weight: 600; line-height: 1.1; }
+  .loc-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .loc-cols h3 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--copper); margin: 0 0 10px; }
+  .loc-cols ul { list-style: none; padding: 0; margin: 0; }
+  .loc-cols li { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(244,239,232,.12); font-size: 14px; }
+  .loc-cols li b { color: var(--copper); font-weight: 500; white-space: nowrap; }
+  .map-link { margin-top: 32px; display: inline-flex; color: var(--copper); font-weight: 500; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+  .perks { list-style: none; padding: 0; margin: 0 0 32px; }
+  .perks li { padding: 10px 0 10px 30px; position: relative; }
+  .perks li::before { content: ""; position: absolute; left: 0; top: 17px; width: 14px; height: 8px; border-left: 2px solid var(--copper-deep); border-bottom: 2px solid var(--copper-deep); transform: rotate(-45deg); }
+  form { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: grid; gap: 16px; box-shadow: 0 20px 50px rgba(29,37,60,.08); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { font-size: 13px; font-weight: 500; color: var(--muted); display: grid; gap: 6px; }
+  input, select, textarea { font: 15px var(--sans); padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); width: 100%; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--copper); outline-offset: 1px; }
+  textarea { resize: vertical; min-height: 90px; }
+  form .btn { width: 100%; }
+  .note { font-size: 12px; color: var(--muted); text-align: center; margin: 0; }
+
+  footer { background: var(--navy-deep); color: rgba(244,239,232,.65); padding: 40px 0 160px; font-size: 12px; }
+  footer .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 18px; font-size: 13px; color: rgba(244,239,232,.85); }
+  footer details { border-top: 1px solid rgba(244,239,232,.15); padding-top: 14px; }
+  footer summary { cursor: pointer; color: var(--copper); font-size: 13px; }
+  footer details p { line-height: 1.55; }
+
+  /* Floating WhatsApp */
+  .fab { position: fixed; right: 20px; bottom: 20px; z-index: 30; width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(18,140,75,.4); text-decoration: none; }
+  .fab svg { width: 30px; height: 30px; }
+  .fab::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa); animation: ping 2.2s infinite; }
+  @keyframes ping { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.6); opacity: 0; } }
+  /* Cartoon mascot */
+  .mascot { position: fixed; right: 16px; bottom: 12px; z-index: 30; display: flex; align-items: flex-end; gap: 4px; pointer-events: none; }
+  .mascot > * { pointer-events: auto; }
+  .mascot-btn { position: relative; display: block; width: 104px; text-decoration: none; filter: drop-shadow(0 8px 16px rgba(29,37,60,.25)); transition: transform .2s; }
+  .mascot-btn:hover { transform: scale(1.06); }
+  .char { display: block; width: 100%; height: auto; overflow: visible; }
+  .char .bob { animation: bob 2.4s ease-in-out infinite; }
+  .char .wave { transform-box: fill-box; transform-origin: 0% 100%; animation: wave 1.6s ease-in-out infinite; }
+  .char .eyes { transform-box: fill-box; transform-origin: center; animation: blink 4s infinite; }
+  .char .shadow { transform-box: fill-box; transform-origin: center; animation: shadow 2.4s ease-in-out infinite; }
+  .mascot-wa { position: absolute; right: 2px; bottom: 6px; width: 36px; height: 36px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; border: 3px solid #fff; }
+  .mascot-wa svg { width: 18px; height: 18px; }
+  .mascot-wa::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 2px solid var(--wa); animation: ping 2.2s infinite; }
+  .bubble { position: relative; margin-bottom: 92px; max-width: 220px; background: #fff; color: var(--ink); border-radius: 16px 16px 4px 16px; padding: 12px 30px 12px 14px; box-shadow: 0 12px 30px rgba(29,37,60,.2); font-size: 14px; line-height: 1.45; opacity: 0; transform: translateY(10px) scale(.9); transform-origin: bottom right; transition: opacity .35s, transform .35s cubic-bezier(.3,1.6,.6,1); }
+  .bubble.show { opacity: 1; transform: none; }
+  .bubble.gone { display: none; }
+  .bubble a { text-decoration: none; display: block; }
+  .bubble b { display: block; color: var(--navy); font-size: 15px; }
+  .bubble em { display: inline-block; margin-top: 6px; font-style: normal; font-weight: 600; color: var(--wa-dark); }
+  .bubble::after { content: ""; position: absolute; right: -6px; bottom: 10px; border: 7px solid transparent; border-left-color: #fff; border-bottom-color: #fff; }
+  .bubble-x { position: absolute; top: 4px; right: 6px; border: 0; background: none; color: var(--muted); font-size: 18px; line-height: 1; cursor: pointer; padding: 2px 4px; }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+  @keyframes shadow { 0%, 100% { transform: scaleX(1); opacity: 1; } 50% { transform: scaleX(.8); opacity: .6; } }
+  @keyframes wave { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(22deg); } }
+  @keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.1); } }
+  @media (max-width: 520px) {
+    .mascot { right: 8px; bottom: 8px; }
+    .mascot-btn { width: 80px; }
+    .bubble { max-width: 180px; margin-bottom: 72px; font-size: 13px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .fab::after, .mascot-wa::after, .char * { animation: none !important; } html { scroll-behavior: auto; } }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .about, .contact-grid, .fac-hero { grid-template-columns: 1fr; gap: 32px; }
+    .units, .loc-top { grid-template-columns: 1fr; }
+    .loc-cols, .specs { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .nav-right .btn { display: none; }
+    .hero::before { background: linear-gradient(180deg, rgba(29,37,60,.88), rgba(29,37,60,.7)); }
+    .hero .wrap { padding-top: 64px; padding-bottom: 120px; }
+    .hero p { font-size: 16px; }
+    .hero-cta .btn { width: 100%; }
+    .row, .loc-cols, .specs { grid-template-columns: 1fr; }
+    section { padding: 72px 0; }
+    form { padding: 22px; }
+    .fac-hero img { height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.250-.46-2.38-1.470-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.290.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.8h-.01a9.83 9.83 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.24c0-5.42 4.42-9.84 9.85-9.84 2.63 0 5.1 1.03 6.96 2.89a9.780 9.780 0 0 1 2.88 6.96c0 5.43-4.420 9.84-9.86 9.84m8.38-18.22A11.77 11.77 0 0 0 12.04.1C5.5.1.17 5.42.17 11.96c0 2.09.55 4.13 1.59 5.93L.07 24l6.26-1.64a11.84 11.84 0 0 0 5.7 1.45h.01c6.54 0 11.87-5.32 11.87-11.87 0-3.17-1.23-6.15-3.48-8.39"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>ADISON</b><small>W City Larkinton</small></a>
+    <nav class="nav-links">
+      <a href="#about" data-i18n="nav_about"></a>
+      <a href="#units" data-i18n="nav_units"></a>
+      <a href="#gallery" data-i18n="nav_gal"></a>
+      <a href="#siteplan" data-i18n="nav_site"></a>
+      <a href="#facilities" data-i18n="nav_fac"></a>
+      <a href="#location" data-i18n="nav_location"></a>
+      <a href="#contact" data-i18n="nav_contact"></a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="zh">中文</button>
+      </div>
+      <a class="btn btn-wa btn-sm wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span>WhatsApp</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="hero_eyebrow"></span>
+      <h1>ADISON</h1>
+      <div class="tag" data-i18n="hero_tag"></div>
+      <p data-i18n="hero_sub"></p>
+      <div class="price"><span data-i18n="price_from"></span><b>RM 382,000*</b></div>
+      <div class="hero-cta">
+        <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span data-i18n="cta_main"></span></a>
+        <a class="btn btn-ghost" href="#units" data-i18n="cta_units"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat"><b data-i18n="s1_v"></b><span data-i18n="s1"></span></div>
+        <div class="stat"><b data-i18n="s2_v"></b><span data-i18n="s2"></span></div>
+        <div class="stat"><b>6 KM</b><span data-i18n="s3"></span></div>
+        <div class="stat"><b data-i18n="s4_v"></b><span data-i18n="s4"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-img"><img src="images/towers.jpeg" alt="Adison serviced apartment towers (artist's impression)"></div>
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="kicker" data-i18n="about_kicker"></span>
+          <h2 data-i18n="about_title"></h2>
+          <p data-i18n="about_sub"></p>
+        </div>
+        <ul class="points">
+          <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M6 21V10l6-6 6 6v11"/><path d="M10 21v-5h4v5"/></svg></div><div><b data-i18n="pt1_t"></b><span data-i18n="pt1_d"></span></div></li>
+          <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 20c-2-2-3-5-1-9s6-6 12-7c-1 6-3 10-7 12s-3 2-4 4z"/><path d="M5 22c3-6 6-9 10-12"/></svg></div><div><b data-i18n="pt2_t"></b><span data-i18n="pt2_d"></span></div></li>
+          <li><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div><div><b data-i18n="pt3_t"></b><span data-i18n="pt3_d"></span></div></li>
+        </ul>
+        <div class="award">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
+          <span data-i18n="award"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="units" class="units-bg">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="units_kicker"></span>
+        <h2 data-i18n="units_title"></h2>
+        <p data-i18n="units_sub"></p>
+      </div>
+      <div class="units" id="unitList"></div>
+      <p class="fine" data-i18n="units_fine"></p>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="gal_kicker"></span>
+        <h2 data-i18n="gal_title"></h2>
+        <p data-i18n="gal_sub"></p>
+      </div>
+      <div class="gal-tabs" id="galTabs"></div>
+      <div class="gal-grid" id="galGrid"></div>
+      <a class="btn btn-wa gal-ask" id="galAsk" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span data-i18n="gal_ask"></span></a>
+    </div>
+  </section>
+
+  <section id="siteplan" class="units-bg">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="sp_kicker"></span>
+        <h2 data-i18n="sp_title"></h2>
+        <p data-i18n="sp_sub"></p>
+      </div>
+      <div class="sp-modes">
+        <button type="button" class="on" data-mode="type" data-i18n="sp_by_type"></button>
+        <button type="button" data-mode="view" data-i18n="sp_by_view"></button>
+      </div>
+      <div class="sp-grid">
+        <div>
+          <div class="sp-scroll">
+            <div class="sp-map" id="spMap" data-mode="type">
+              <img src="images/siteplan.jpg" alt="Adison site plan with Towers A, B, C and D">
+            </div>
+          </div>
+          <div class="sp-legend">
+            <span><i class="lg-P"></i><b data-i18n="face_P_s"></b></span>
+            <span><i class="lg-N"></i><b data-i18n="face_N_s"></b></span>
+            <span><i class="lg-S"></i><b data-i18n="face_S_s"></b></span>
+            <span class="sp-hint" data-i18n="sp_hint"></span>
+          </div>
+        </div>
+        <aside class="sp-panel" id="spPanel"></aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="towers">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="tw_kicker"></span>
+        <h2 data-i18n="tw_title"></h2>
+        <p data-i18n="tw_sub"></p>
+      </div>
+      <div class="tower-tabs" role="tablist">
+        <button type="button" class="on" data-tower="A">Tower A</button>
+        <button type="button" data-tower="B">Tower B</button>
+        <button type="button" data-tower="C">Tower C</button>
+        <button type="button" data-tower="D">Tower D</button>
+      </div>
+      <button type="button" class="tower-img zoomable">
+        <img id="towerImg" src="images/tower-A.jpg" alt="Tower A unit layout">
+      </button>
+      <div class="tower-legend">
+        <span><i style="background:#c9b3a9"></i><b data-i18n="lg_a"></b></span>
+        <span><i style="background:#b9cdd9"></i><b data-i18n="lg_b"></b></span>
+        <span><i style="background:#bfc1c3"></i><b data-i18n="lg_c"></b></span>
+        <span class="tower-hint" data-i18n="u_zoom"></span>
+      </div>
+      <a class="btn btn-wa tower-ask" id="towerAsk" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span id="towerAskTxt"></span></a>
+    </div>
+  </section>
+
+  <section id="facilities">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="fac_kicker"></span>
+        <h2 data-i18n="fac_title"></h2>
+        <p data-i18n="fac_sub"></p>
+      </div>
+      <div class="fac-hero">
+        <figure><img src="images/pool.jpeg" alt="Swimming pool (artist's impression)"></figure>
+        <figure class="plan"><img src="images/facilities.jpeg" alt="Facilities podium plan (artist's impression)"></figure>
+      </div>
+      <ul class="fac-list" id="facList"></ul>
+      <div class="specs">
+        <div class="spec"><b data-i18n="sp1_t"></b><span data-i18n="sp1_d"></span></div>
+        <div class="spec"><b data-i18n="sp2_t"></b><span data-i18n="sp2_d"></span></div>
+        <div class="spec"><b data-i18n="sp3_t"></b><span data-i18n="sp3_d"></span></div>
+        <div class="spec"><b data-i18n="sp4_t"></b><span data-i18n="sp4_d"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="loc-bg">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="loc_kicker"></span>
+        <h2 data-i18n="loc_title"></h2>
+        <p data-i18n="loc_sub"></p>
+      </div>
+      <div class="loc-top">
+        <div class="loc-big"><b>500 M</b><span data-i18n="lb1"></span></div>
+        <div class="loc-big"><b>6 KM</b><span data-i18n="lb2"></span></div>
+        <div class="loc-big"><b>1.6 KM</b><span data-i18n="lb3"></span></div>
+      </div>
+      <div class="loc-cols" id="locCols"></div>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=W+City+Larkinton+Johor+Bahru" target="_blank" rel="noopener" data-i18n="map_link"></a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:28px">
+          <span class="kicker" data-i18n="contact_kicker"></span>
+          <h2 data-i18n="contact_title"></h2>
+          <p data-i18n="contact_sub"></p>
+        </div>
+        <ul class="perks">
+          <li data-i18n="perk1"></li>
+          <li data-i18n="perk2"></li>
+          <li data-i18n="perk3"></li>
+          <li data-i18n="perk4"></li>
+        </ul>
+        <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span data-i18n="cta_main"></span></a>
+      </div>
+
+      <form id="leadForm" novalidate>
+        <div class="row">
+          <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="f_phone"></span><input name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <div class="row">
+          <label><span data-i18n="f_unit"></span><select name="unit" id="unitSelect"></select></label>
+          <label><span data-i18n="f_purpose"></span>
+            <select name="purpose">
+              <option value="own" data-i18n="p_own"></option>
+              <option value="invest" data-i18n="p_invest"></option>
+              <option value="both" data-i18n="p_both"></option>
+            </select>
+          </label>
+        </div>
+        <label><span data-i18n="f_msg"></span><textarea name="msg" data-i18n-ph="f_msg_ph"></textarea></label>
+        <button class="btn btn-wa" type="submit"><svg><use href="#wa"/></svg><span data-i18n="f_submit"></span></button>
+        <p class="note" data-i18n="f_note"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <span>Adison · W City Larkinton Johor Bahru</span>
+      <span id="agentLine"></span>
+    </div>
+    <p data-i18n="disclaimer"></p>
+    <details>
+      <summary data-i18n="dev_info"></summary>
+      <p>Developer: WCT Green Sdn Bhd 201101001824 (929961-P) (A member of WCT Holdings Berhad) • Developer's License No.: 30376/02-2028/0053(A) • Validity: 17/02/2023 - 16/02/2028 • Advertising &amp; Sales Permit No.: (Phase 3) 30376-3/01-2028/0006(N)-(S), Validity: 02/01/2025 - 01/01/2028; (Phase 4) 30376-2/12-2027/1128(A)-(S), Validity: 10/12/2024 - 09/12/2027; (Phase 5) 30376-4/01-2028/0060(N)-(S), Validity: 22/01/2025 - 21/01/2028; (Phase 6) 30376-5/01-2028/0059(N)-(S), Validity: 22/01/2025 - 21/01/2028 • Approving Authority: Majlis Bandaraya Johor Bahru • Building Plan Reference No.: MBJB/U/2021/14/BGN/134/KOM (69) • Land Tenure: Freehold • Expected Completion Date: December 2028 • Land Encumbrances: NIL • Type of Property: Serviced Apartments • Development Name: Adison (Phase 3, 4, 5 and 6) • Car Park Bays: (Phase 3, 4, 5 and 6) 1 Unit: 1-2 bays • Total No. of Units: (Phase 3) 224 Units; (Phase 4) 238 Units; (Phase 5) 224 Units; (Phase 6) 210 Units • Selling Price: (Phase 3) Min. RM 462,000.00 - Max. RM 798,000.00; (Phase 4) Min. RM 449,000.00 - Max. RM 779,000.00; (Phase 5) Min. RM 483,000.00 - Max. RM 833,000.00; (Phase 6) Min. RM 469,000.00 - Max. RM 813,000.00 • 15% Bumiputra Discount.</p>
+      <p>Sekatan-sekatan Kepentingan: 1. Tanah yang dikurniakan ini tidak boleh dijual, dicagar, digadai, dipajak atau dipindahmilik dengan apa cara sekalipun termasuk dengan cara menggunakan surat perjanjian yang bertujuan untuk melepaskan/menjual tanah ini tanpa kebenaran Pihak Berkuasa Negeri; 2. Tuanpunya tanah tidak dibenarkan menawar atau menjual unit-unit (parcels) bangunan yang akan dibina di atas tanah ini melainkan bangunan telah mula dibina mengikut pelan yang diluluskan oleh Pihak Berkuasa Tempatan yang berkenaan; 3. Petak-petak bangunan yang didirikan di atas tanah ini apabila sahaja bertukar miliknya kepada Seorang Bumiputra maka tidak boleh terkemudian daripada itu dijual, dipajak, atau dipindahmilik daripada apa cara sekalipun kepada Orang Bukan Bumiputra/Syarikat Bukan Bumiputra tanpa persetujuan Pihak Berkuasa Negeri; 4. Petak-petak bangunan yang didirikan di atas tanah ini tidak boleh dijual atau dipindahmilik dengan apa cara sekalipun kepada Bukan Warganegara/Syarikat Asing tanpa persetujuan Pihak Berkuasa Negeri; 5. Syarat ini adalah terpakai dan berkuatkuasa ke atas skim strata yang berdampingan iaitu PTB24788 dan PTB 24790.</p>
+      <p>THIS ADVERTISEMENT HAS BEEN APPROVED BY MINISTRY OF HOUSING DEVELOPMENT. DEVELOPMENT INFORMATION CAN BE OBTAINED FROM TEDUH.KPKT.GOV.MY PORTAL.</p>
+    </details>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden><img src="" alt=""><button type="button" class="lb-close" aria-label="Close">×</button><button type="button" class="lb-nav lb-prev" aria-label="Previous">‹</button><button type="button" class="lb-nav lb-next" aria-label="Next">›</button><div class="lb-cap"></div></div>
+
+<div class="mascot">
+  <div class="bubble" id="bubble">
+    <button type="button" class="bubble-x" id="bubbleX" aria-label="Close">×</button>
+    <a class="wa-link" href="#" target="_blank" rel="noopener"><b data-i18n="m_hi"></b><span data-i18n="m_ask"></span><em data-i18n="m_cta"></em></a>
+  </div>
+  <a class="mascot-btn wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg class="char" viewBox="0 0 120 150" aria-hidden="true">
+      <ellipse class="shadow" cx="60" cy="147" rx="30" ry="3" fill="rgba(0,0,0,.18)"/>
+      <g class="bob">
+        <path d="M36 110 Q27 128 35 143" stroke="#2b3654" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <circle cx="35" cy="144" r="6" fill="#f6d3b8"/>
+        <path d="M28 150 C28 116 42 100 60 100 C78 100 92 116 92 150 Z" fill="#2b3654"/>
+        <path d="M51 101 L60 120 L69 101 Z" fill="#fff"/>
+        <path d="M58 107 L62 107 L64 125 L60 130 L56 125 Z" fill="#e39a72"/>
+        <rect x="55" y="88" width="10" height="14" rx="3" fill="#ecc3a5"/>
+        <circle cx="34" cy="70" r="5" fill="#f6d3b8"/>
+        <circle cx="86" cy="70" r="5" fill="#f6d3b8"/>
+        <circle cx="60" cy="68" r="26" fill="#f6d3b8"/>
+        <path d="M34 68 C30 42 48 34 62 36 C80 36 92 48 86 68 C83 57 75 50 64 52 C54 54 44 51 39 60 Z" fill="#2a2d3e"/>
+        <g class="eyes"><ellipse cx="51" cy="71" rx="3" ry="3.8" fill="#2a2d3e"/><ellipse cx="69" cy="71" rx="3" ry="3.8" fill="#2a2d3e"/></g>
+        <circle cx="45" cy="80" r="4" fill="#f4a3a0" opacity=".6"/>
+        <circle cx="75" cy="80" r="4" fill="#f4a3a0" opacity=".6"/>
+        <path d="M52 82 Q60 90 68 82" stroke="#2a2d3e" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <g class="wave">
+          <path d="M84 110 L100 84" stroke="#2b3654" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="102" cy="79" r="7" fill="#f6d3b8"/>
+        </g>
+      </g>
+    </svg>
+    <span class="mascot-wa"><svg><use href="#wa"/></svg></span>
+  </a>
+</div>
+
+<script>
+/* ================= EDIT THESE ================= */
+const CONFIG = {
+  // Your WhatsApp number, international format, digits only (e.g. 60123456789)
+  whatsapp: "60127318875",
+  // Shown in the footer, e.g. "Sales enquiries: Owen · 012-345 6789"
+  agentLine: "Tel / WhatsApp: +60 12-731 8875"
+};
+/* ============================================== */
+
+// Unit data from the Adison eFlyer (sizes include AC ledge)
+const UNITS = [
+  { id: "A",     size: "501 sq ft",       bed: { en: "Studio", zh: "单间公寓" }, bath: 1, yard: false,
+    plans: [{ id: "A", size: "501 sq ft" }] },
+  { id: "B1/B2", size: "679 – 681 sq ft", bed: { en: "2 Bedrooms", zh: "2 房" }, bath: 1, yard: true,
+    plans: [{ id: "B1", size: "681 sq ft" }, { id: "B2", size: "679 sq ft" }] },
+  { id: "C/C1",  size: "791 – 793 sq ft", bed: { en: "2 Bedrooms", zh: "2 房" }, bath: 2, yard: true,
+    plans: [{ id: "C", size: "791 sq ft" }, { id: "C1", size: "793 sq ft" }] }
+];
+
+const FACILITIES = {
+  en: ["BBQ Pit", "Plaza", "Decking", "Playground", "Seating Area", "Leisure Area", "Wading Pool", "Jacuzzi", "Pool Lounge", "Swimming Pool", "Sunken Amphitheatre", "Pavilion", "Gym & Yoga Room", "Multipurpose Hall"],
+  zh: ["烧烤区", "广场", "休闲平台", "儿童游乐场", "休憩区", "休闲区", "儿童戏水池", "按摩池", "泳池休息区", "游泳池", "下沉式露天剧场", "凉亭", "健身房及瑜伽室", "多功能厅"]
+};
+
+const NEARBY = [
+  { en: "Shopping", zh: "购物商场", items: [
+    ["Angsana Mall", "Angsana 购物中心", "4.3 km"], ["Komtar JBCC", "Komtar JBCC", "5.2 km"],
+    ["Johor Bahru City Square", "新山城市广场", "5.3 km"], ["Paradigm Mall", "Paradigm 购物中心", "6.9 km"],
+    ["Mid Valley Southkey", "Mid Valley Southkey", "14.4 km"] ] },
+  { en: "Medical", zh: "医疗中心", items: [
+    ["KPJ Puteri Specialist", "KPJ Puteri 专科医院", "1.6 km"], ["KPJ Johor Specialist", "KPJ 柔佛专科医院", "3.2 km"],
+    ["Sultanah Aminah Hospital", "苏丹娜阿米娜医院", "5.6 km"], ["Gleneagles Medini", "鹰阁 Medini 医院", "15.4 km"] ] },
+  { en: "Education", zh: "教育机构", items: [
+    ["Institut Kemahiran MARA", "MARA 技职学院", "7.3 km"], ["Sri Utama School", "Sri Utama 学校", "9.0 km"],
+    ["Marlborough College", "马尔堡公学", "14.2 km"], ["Raffles American School", "莱佛士美国学校", "14.3 km"] ] },
+  { en: "Recreation", zh: "休闲娱乐", items: [
+    ["Johor Golf & Country Club", "柔佛高尔夫乡村俱乐部", "500 m"], ["Bukit Serene Palace", "武吉士林皇宫", "3.7 km"],
+    ["Legoland Malaysia", "马来西亚乐高乐园", "14.6 km"], ["Puteri Harbour", "公主港", "17.3 km"] ] }
+];
+
+const T = {
+  en: {
+    nav_about: "Overview", nav_units: "Floor Plans", nav_gal: "Show Unit", nav_towers: "Towers", nav_site: "Pick a Unit", nav_fac: "Facilities", nav_location: "Location", nav_contact: "Contact",
+    cta_main: "WhatsApp for price list", cta_units: "View floor plans",
+    hero_eyebrow: "New phase · Freehold",
+    hero_tag: "Serviced Apartments · W City Larkinton",
+    hero_sub: "Luxury living facing the greens of Johor Golf & Country Club, inside a 68-acre greenfront lifestyle centre in Johor Bahru city.",
+    price_from: "From",
+    s1_v: "Freehold", s1: "Land tenure", s2_v: "68 Acres", s2: "Greenfront lifestyle centre", s3: "To Singapore–Johor CIQ", s4_v: "2028", s4: "Expected completion",
+    about_kicker: "High energy, cool style", about_title: "Your ultimate base in JB city",
+    about_sub: "Adison's new phase is positioned closest to W City's upcoming offices and retail mall — the perfect base for a lively, connected lifestyle.",
+    pt1_t: "Explore", pt1_d: "A neighbourhood mall right at your doorstep to browse, dine and unwind.",
+    pt2_t: "Belong", pt2_d: "Residences facing the green serenity of the golf course.",
+    pt3_t: "Connect", pt3_d: "Modern workspaces nearby, 6 km from CIQ and the upcoming RTS Link.",
+    award: "PropertyGuru Asia Property Awards 2024 — Best High End High-Rise Development (Southern)",
+    units_kicker: "Floor plans", units_title: "Choose your layout", units_sub: "Studio and 2-bedroom layouts with practical, efficient space. WhatsApp us for the full floor plans and latest availability.",
+    u_type: "Type", u_layout: "Layout", u_bath: "Bathrooms", u_yard: "Yard", yes: "Yes", no: "—", u_ask: "Get price for Type", u_zoom: "Tap to enlarge",
+    sp_kicker: "Interactive site plan", sp_title: "Pick your unit, see your view", sp_sub: "All four towers at a glance. Tap any unit to see which way it faces, its layout and the view direction.",
+    sp_by_type: "By unit type", sp_by_view: "By view", sp_hint: "Tap a unit · scroll sideways on mobile",
+    face_P_s: "Pool & facilities", face_N_s: "North · main road & city", face_S_s: "South · future mall & golf course",
+    face_P: "Facing the facilities podium", face_P_d: "Overlooks the swimming pool, gardens and lifestyle facilities between the towers.",
+    face_N: "North-facing · city side", face_N_d: "Faces Jalan Tun Abdul Razak and the Johor Bahru city side.",
+    face_S: "South-facing · green side", face_S_d: "Faces the proposed neighbourhood mall, with Johor Golf & Country Club beyond.",
+    corner_W: "Corner unit · west side windows", corner_E: "Corner unit · east side windows",
+    sp_unit: "Unit", sp_layout: "Layout", sp_ref: "Reference image only — not the actual view",
+    sp_pick: "Tap any unit on the plan to see its view and layout.",
+    sp_ask: "Ask for actual view photos",
+    wa_unit_q: "Hi, I'm interested in Adison Tower {t}, unit position {n} (Type {type}). Could you share the actual view photos and availability on different floors?",
+    tw_kicker: "Tower key plans", tw_title: "Unit layout by tower", tw_sub: "Four towers with 14 units per floor. Pick a tower to see where each unit type sits — tell me your preferred tower and unit number for availability.",
+    lg_a: "Type A · Studio", lg_b: "Type B · 2 Bed 1 Bath", lg_c: "Type C · 2 Bed 2 Bath", tw_ask: "Check availability in Tower",
+    wa_tower: "Hi, I'd like to check unit availability in Adison Tower",
+    m_hi: "Hi there! 👋", m_ask: "Any questions about Adison? I'm happy to help.", m_cta: "Chat on WhatsApp →",
+    gal_kicker: "Show unit gallery", gal_title: "Step inside the show units", gal_sub: "Real photos taken at the Adison show units. Pick a unit type and tap any photo to view it full screen.",
+    gal_photos: "photos", gal_ask: "Book a show unit visit", gal_tab_A: "Type A · Studio", gal_tab_B: "Type B · 2 Bed 1 Bath", gal_tab_C: "Type C · 2 Bed 2 Bath",
+    wa_visit: "Hi, I'd like to book a visit to the Adison show unit (Type {type}).",
+    units_fine: "Sizes include AC ledge. Balcony variants (A2, B2a, C2) also available. Selling price from RM 382,000.",
+    fac_kicker: "Dive right in", fac_title: "14 lifestyle facilities", fac_sub: "Splash in the pool, hit the gym, fire up the BBQ and play in the sun-drenched park — all on the facilities podium.",
+    sp1_t: "Digital lockset", sp1_d: "Fire-rated main entrance door",
+    sp2_t: "Fibre ready", sp2_d: "Fibre wall socket & SMATV point",
+    sp3_t: "Water heater point", sp3_d: "Provided in every bathroom",
+    sp4_t: "1–2 car park bays", sp4_d: "Per unit",
+    loc_kicker: "Score big with our spot", loc_title: "Minutes from Singapore", loc_sub: "W City Larkinton is a strategic hub just 6 km from the Singapore–Johor border, close to the upcoming RTS station and the city's key landmarks.",
+    lb1: "Johor Golf & Country Club", lb2: "Singapore–Johor CIQ & upcoming RTS", lb3: "KPJ Puteri Specialist Hospital",
+    map_link: "Open in Google Maps →",
+    contact_kicker: "Get in touch", contact_title: "Get the full details", contact_sub: "Message me on WhatsApp and I'll send you everything you need — usually within minutes.",
+    perk1: "Latest price list & booking promotions", perk2: "Full floor plans & e-brochure", perk3: "Loan eligibility check", perk4: "Sales gallery & show unit appointment",
+    f_name: "Your name", f_phone: "Phone (optional)", f_unit: "Interested in", f_purpose: "Purpose",
+    p_own: "Own stay", p_invest: "Investment", p_both: "Both",
+    f_msg: "Message (optional)", f_msg_ph: "e.g. I'd like to visit the sales gallery this weekend",
+    f_submit: "Send via WhatsApp", f_note: "Opens WhatsApp with your message ready to send.",
+    any: "Any type", name_req: "Please enter your name.",
+    disclaimer: "All illustrations are artist's impressions only. Information is subject to change without notification and cannot form part of an offer or contract.",
+    dev_info: "Developer & advertising permit information",
+    wa_hello: "Hi, I'm interested in Adison @ W City Larkinton. Please send me the price list and more information.",
+    wa_name: "Name", wa_phone: "Phone", wa_unit: "Interested in", wa_purpose: "Purpose", wa_msg: "Message",
+    wa_type: "Hi, I'd like the price and floor plan for Adison Type"
+  },
+  zh: {
+    nav_about: "项目概览", nav_units: "户型图", nav_gal: "样板房", nav_towers: "楼层分布", nav_site: "景观选位", nav_fac: "设施", nav_location: "地理位置", nav_contact: "联系我们",
+    cta_main: "WhatsApp 索取价格表", cta_units: "查看户型",
+    hero_eyebrow: "全新期数 · 永久地契",
+    hero_tag: "服务式公寓 · W City Larkinton",
+    hero_sub: "坐落于新山市区 68 英亩绿色生活中心，面向柔佛高尔夫乡村俱乐部的绿意美景，尽享奢华生活。",
+    price_from: "售价起",
+    s1_v: "永久地契", s1: "地契类型", s2_v: "68 英亩", s2: "绿色生活中心", s3: "距离新柔关卡 (CIQ)", s4_v: "2028 年", s4: "预计完工",
+    about_kicker: "活力满满 · 酷炫格调", about_title: "新山市区的理想据点",
+    about_sub: "Adison 新期数最靠近 W City 即将落成的办公楼与购物商场，是享受活力便利生活的完美选择。",
+    pt1_t: "探索", pt1_d: "家门口的社区商场，购物、美食、休闲一站式满足。",
+    pt2_t: "归属", pt2_d: "住宅面向高尔夫球场，坐拥宁静绿意。",
+    pt3_t: "连接", pt3_d: "邻近现代办公空间，距离 CIQ 仅 6 公里，靠近即将启用的 RTS 捷运站。",
+    award: "2024 年 PropertyGuru 亚洲房地产大奖 — 最佳高端高层发展项目（南马）",
+    units_kicker: "户型图", units_title: "选择您的理想户型", units_sub: "单间及两房户型，空间实用高效。WhatsApp 我们获取完整户型图及最新单位余量。",
+    u_type: "户型", u_layout: "格局", u_bath: "浴室", u_yard: "晾衣区", yes: "有", no: "—", u_ask: "索取价格 · 户型", u_zoom: "点击放大",
+    sp_kicker: "互动总平面图", sp_title: "选择单位，看看您的景观", sp_sub: "一图看清 4 座楼。点击任何单位，即可查看朝向、户型及景观方向。",
+    sp_by_type: "按户型", sp_by_view: "按景观", sp_hint: "点击单位 · 手机可左右滑动",
+    face_P_s: "泳池及设施景观", face_N_s: "北向 · 大道及城市", face_S_s: "南向 · 规划商场及高尔夫球场",
+    face_P: "面向设施平台", face_P_d: "俯瞰楼宇之间的泳池、花园及生活设施。",
+    face_N: "北向 · 城市景观", face_N_d: "面向敦阿都拉萨路及新山市区方向。",
+    face_S: "南向 · 绿意景观", face_S_d: "面向规划中的邻里购物中心，远处为柔佛高尔夫乡村俱乐部。",
+    corner_W: "角落单位 · 西侧额外采光", corner_E: "角落单位 · 东侧额外采光",
+    sp_unit: "单位", sp_layout: "户型", sp_ref: "参考图，非实际景观",
+    sp_pick: "点击平面图上的任何单位，查看景观及户型。",
+    sp_ask: "索取实景照片",
+    wa_unit_q: "您好，我对 Adison Tower {t} 第 {n} 号单位（{type} 型）有兴趣，可以发实际景观照片和各楼层余量给我吗？",
+    tw_kicker: "楼层单位分布", tw_title: "各座楼层平面图", tw_sub: "共 4 座，每层 14 个单位。选择座别查看各户型位置，告诉我您心仪的座别和单位号码，我帮您查询余量。",
+    lg_a: "A 型 · 单间", lg_b: "B 型 · 2 房 1 卫", lg_c: "C 型 · 2 房 2 卫", tw_ask: "查询单位余量 · Tower",
+    wa_tower: "您好，我想查询 Adison 单位余量：Tower",
+    m_hi: "您好！👋", m_ask: "对 Adison 有任何疑问？欢迎随时询问。", m_cta: "WhatsApp 咨询 →",
+    gal_kicker: "样板房实拍", gal_title: "走进样板房", gal_sub: "Adison 样板房实拍照片。选择户型，点击照片即可全屏浏览。",
+    gal_photos: "张照片", gal_ask: "预约参观样板房", gal_tab_A: "A 型 · 单间", gal_tab_B: "B 型 · 2 房 1 卫", gal_tab_C: "C 型 · 2 房 2 卫",
+    wa_visit: "您好，我想预约参观 Adison 样板房（{type} 型）。",
+    units_fine: "面积包括空调平台。另有带阳台户型（A2、B2a、C2）。售价从 RM 382,000 起。",
+    fac_kicker: "尽情畅玩", fac_title: "14 项生活设施", fac_sub: "畅游泳池、健身锻炼、烧烤聚会、阳光公园嬉戏 — 尽在设施平台。",
+    sp1_t: "电子门锁", sp1_d: "防火大门",
+    sp2_t: "光纤就绪", sp2_d: "光纤墙插及卫星电视接口",
+    sp3_t: "热水器接口", sp3_d: "每间浴室均配备",
+    sp4_t: "1–2 个停车位", sp4_d: "每单位",
+    loc_kicker: "黄金地段 · 捷足先登", loc_title: "数分钟直达新加坡", loc_sub: "W City Larkinton 距离新柔关卡仅 6 公里，靠近即将启用的 RTS 捷运站及新山各大地标。",
+    lb1: "柔佛高尔夫乡村俱乐部", lb2: "新柔关卡 (CIQ) 及 RTS 捷运站", lb3: "KPJ Puteri 专科医院",
+    map_link: "在 Google 地图中打开 →",
+    contact_kicker: "联系我们", contact_title: "获取完整资料", contact_sub: "WhatsApp 给我留言，我会尽快把您需要的资料发给您。",
+    perk1: "最新价格表及订购优惠", perk2: "完整户型图及电子手册", perk3: "贷款资格评估", perk4: "预约参观销售中心及样板房",
+    f_name: "您的姓名", f_phone: "电话（选填）", f_unit: "意向户型", f_purpose: "购买用途",
+    p_own: "自住", p_invest: "投资", p_both: "自住兼投资",
+    f_msg: "留言（选填）", f_msg_ph: "例如：我想在这个周末参观销售中心",
+    f_submit: "通过 WhatsApp 发送", f_note: "将打开 WhatsApp，消息已为您填好。",
+    any: "任何户型", name_req: "请填写您的姓名。",
+    disclaimer: "所有图片均为艺术家构想图。以上资料如有更改，恕不另行通知，且不构成任何要约或合约的一部分。",
+    dev_info: "发展商及广告准证资料",
+    wa_hello: "您好，我对 Adison @ W City Larkinton 有兴趣，请发送价格表及更多资料给我。",
+    wa_name: "姓名", wa_phone: "电话", wa_unit: "意向户型", wa_purpose: "用途", wa_msg: "留言",
+    wa_type: "您好，我想了解 Adison 户型价格及户型图："
+  }
+};
+
+let lang = "";
+try { lang = localStorage.getItem("lang") || ""; } catch (e) {}
+if (!T[lang]) lang = (navigator.language || "").toLowerCase().startsWith("zh") ? "zh" : "en";
+
+const waUrl = text => "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text);
+
+function render() {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.title = lang === "zh" ? "Adison · W City Larkinton | WhatsApp 咨询" : "Adison · W City Larkinton | WhatsApp for details";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t[el.dataset.i18nPh]; });
+  document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
+  document.querySelectorAll(".wa-link").forEach(a => { a.href = waUrl(t.wa_hello); });
+  document.getElementById("agentLine").textContent = CONFIG.agentLine;
+
+  document.getElementById("unitList").innerHTML = UNITS.map(u => `
+    <div class="unit">
+      <button type="button" class="unit-cover" data-gal="${u.id[0]}"><img src="images/units/${u.id[0]}/01-s.jpg" alt="${t.u_type} ${u.id[0]} show unit" loading="lazy"><span>📷 ${GALLERY[u.id[0]].length} ${t.gal_photos}</span></button>
+      <div class="unit-top"><small>${u.bed[lang]}</small><h3>${t.u_type} ${u.id}</h3><div class="sz">${u.size}</div></div>
+      <div class="plan-box">
+        ${u.plans.length > 1 ? `<div class="plan-tabs">${u.plans.map((p, k) =>
+          `<button type="button" class="${k ? "" : "on"}" data-plan="${p.id}" data-size="${p.size}">${p.id} · ${p.size}</button>`).join("")}</div>` : ""}
+        <button type="button" class="plan-img" aria-label="${t.u_zoom}">
+          <img src="images/plan-${u.plans[0].id}.jpg" alt="${t.u_type} ${u.plans[0].id} floor plan" loading="lazy">
+          <span>${t.u_zoom}</span>
+        </button>
+      </div>
+      <ul>
+        <li><span>${t.u_layout}</span><span>${u.bed[lang]}</span></li>
+        <li><span>${t.u_bath}</span><span>${u.bath}</span></li>
+        <li><span>${t.u_yard}</span><span>${u.yard ? t.yes : t.no}</span></li>
+      </ul>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="${waUrl(t.wa_type + " " + u.id)}"><svg><use href="#wa"/></svg>${t.u_ask} ${u.id}</a>
+    </div>`).join("");
+
+  document.getElementById("facList").innerHTML = FACILITIES[lang].map(f => `<li>${f}</li>`).join("");
+
+  const i = lang === "zh" ? 1 : 0;
+  document.getElementById("locCols").innerHTML = NEARBY.map(g => `
+    <div><h3>${g[lang]}</h3><ul>${g.items.map(it => `<li><span>${it[i]}</span><b>${it[2]}</b></li>`).join("")}</ul></div>`).join("");
+
+  const sel = document.getElementById("unitSelect");
+  const cur = sel.value;
+  sel.innerHTML = `<option value="">${t.any}</option>` +
+    UNITS.map(u => `<option value="${u.id}">${t.u_type} ${u.id} · ${u.bed[lang]} · ${u.size}</option>`).join("");
+  sel.value = cur;
+  renderTower();
+  if (typeof renderSite === "function") renderSite();
+  if (typeof renderGallery === "function") renderGallery();
+}
+
+// Mascot greeting bubble: pops up shortly after load, can be dismissed for the session
+const bubble = document.getElementById("bubble");
+let bubbleClosed = false;
+try { bubbleClosed = sessionStorage.getItem("bubbleClosed") === "1"; } catch (e) {}
+if (bubbleClosed) bubble.classList.add("gone");
+else setTimeout(() => bubble.classList.add("show"), 1500);
+document.getElementById("bubbleX").addEventListener("click", () => {
+  bubble.classList.add("gone");
+  try { sessionStorage.setItem("bubbleClosed", "1"); } catch (e) {}
+});
+
+// Show unit photos (web-sized copies of the photo/ folder): [file no., room, layout hint]
+const ROOMS = {
+  living: { en: "Living room", zh: "客厅" }, dining: { en: "Dining area", zh: "饭厅" }, livdin: { en: "Living & dining", zh: "客厅及饭厅" },
+  kitchen: { en: "Kitchen", zh: "厨房" }, wetkitchen: { en: "Wet kitchen & yard", zh: "湿厨房及后院" }, bedroom: { en: "Bedroom", zh: "卧室" },
+  master: { en: "Master bedroom", zh: "主卧" }, room2: { en: "Bedroom 2", zh: "第二卧室" }, bath: { en: "Bathroom", zh: "浴室" },
+  vanity: { en: "Master bath & vanity", zh: "主卧浴室及化妆台" }
+};
+const GALLERY = {
+  A: [["01", "living", "wide"], ["02", "livdin", "wide"], ["03", "living", "tall"], ["04", "bedroom", "wide"]],
+  B: [["01", "living", "tall"], ["02", "living", ""], ["03", "dining", ""], ["04", "kitchen", "tall"], ["05", "master", "tall"], ["06", "master", ""], ["07", "room2", ""], ["08", "room2", "tall"], ["09", "bath", ""]],
+  C: [["01", "living", "tall"], ["02", "living", ""], ["03", "dining", ""], ["04", "wetkitchen", "tall"], ["05", "master", "tall"], ["06", "master", ""], ["07", "vanity", ""]]
+};
+let galType = "A", lbList = null, lbIdx = 0;
+function renderGallery() {
+  const t = T[lang];
+  document.getElementById("galTabs").innerHTML = Object.keys(GALLERY).map(k =>
+    `<button type="button" class="${k === galType ? "on" : ""}" data-gal="${k}">${t["gal_tab_" + k]}</button>`).join("");
+  document.getElementById("galGrid").innerHTML = GALLERY[galType].map(([n, room, cls], i) =>
+    `<button type="button" class="gal-item ${cls}" data-i="${i}"><img src="images/units/${galType}/${n}-s.jpg" alt="${t.u_type} ${galType} ${ROOMS[room].en}" loading="lazy"><span>${ROOMS[room][lang]}</span></button>`).join("");
+  document.getElementById("galAsk").href = waUrl(t.wa_visit.replace("{type}", galType));
+}
+function lbShow() {
+  const [n, room] = lbList[lbIdx];
+  lightbox.querySelector("img").src = `images/units/${galType}/${n}.jpg`;
+  lightbox.querySelector("img").alt = ROOMS[room].en;
+  lightbox.querySelector(".lb-cap").textContent = `${T[lang].u_type} ${galType} · ${ROOMS[room][lang]} · ${lbIdx + 1} / ${lbList.length}`;
+}
+function openGallery(type, i) {
+  galType = type; lbList = GALLERY[type]; lbIdx = i;
+  renderGallery(); lbShow();
+  lightbox.classList.add("gal"); lightbox.hidden = false;
+}
+function lbStep(d) { lbIdx = (lbIdx + d + lbList.length) % lbList.length; lbShow(); }
+document.getElementById("galTabs").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (b) { galType = b.dataset.gal; renderGallery(); }
+});
+document.getElementById("galGrid").addEventListener("click", e => {
+  const b = e.target.closest(".gal-item");
+  if (b) openGallery(galType, +b.dataset.i);
+});
+
+const lightbox = document.getElementById("lightbox");
+lightbox.querySelector(".lb-prev").addEventListener("click", e => { e.stopPropagation(); lbStep(-1); });
+lightbox.querySelector(".lb-next").addEventListener("click", e => { e.stopPropagation(); lbStep(1); });
+let touchX = null;
+lightbox.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; }, { passive: true });
+lightbox.addEventListener("touchend", e => {
+  if (touchX === null || !lightbox.classList.contains("gal")) return;
+  const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+  if (Math.abs(dx) > 40) { lbStep(dx < 0 ? 1 : -1); lightbox.dataset.swiped = "1"; }
+});
+document.getElementById("unitList").addEventListener("click", e => {
+  const tab = e.target.closest(".plan-tabs button");
+  if (tab) {
+    const box = tab.closest(".plan-box");
+    box.querySelectorAll(".plan-tabs button").forEach(b => b.classList.toggle("on", b === tab));
+    const img = box.querySelector("img");
+    img.src = "images/plan-" + tab.dataset.plan + ".jpg";
+    img.alt = T[lang].u_type + " " + tab.dataset.plan + " floor plan";
+    return;
+  }
+  const cover = e.target.closest(".unit-cover");
+  if (cover) { openGallery(cover.dataset.gal, 0); return; }
+  const zoom = e.target.closest(".plan-img");
+  if (zoom) {
+    const img = zoom.querySelector("img");
+    lightbox.querySelector("img").src = img.src;
+    lightbox.querySelector("img").alt = img.alt;
+    lightbox.hidden = false;
+  }
+});
+// Interactive site plan: unit boxes measured from the eFlyer podium plan (% of image)
+const SITE_UNITS = [{"t":"A","n":"01","type":"A","face":"P","corner":"","x":18.93,"y":64.33,"w":2.52,"h":11.04},{"t":"A","n":"02","type":"B2b","face":"P","corner":"","x":15.42,"y":64.33,"w":3.45,"h":11.04},{"t":"A","n":"03","type":"B2","face":"P","corner":"","x":11.16,"y":64.33,"w":3.46,"h":11.04},{"t":"A","n":"04","type":"A","face":"P","corner":"","x":7.14,"y":64.33,"w":2.52,"h":11.04},{"t":"A","n":"05","type":"Ca","face":"P","corner":"W","x":3.06,"y":64.33,"w":4.03,"h":11.04},{"t":"A","n":"06","type":"B1","face":"S","corner":"W","x":5.07,"y":77.9,"w":3.45,"h":11.04},{"t":"A","n":"07","type":"A","face":"S","corner":"","x":8.62,"y":77.9,"w":2.52,"h":11.04},{"t":"A","n":"08","type":"Aa","face":"S","corner":"","x":11.21,"y":77.9,"w":2.52,"h":11.04},{"t":"A","n":"09","type":"A","face":"S","corner":"","x":13.79,"y":77.9,"w":2.52,"h":11.04},{"t":"A","n":"10","type":"C1a","face":"S","corner":"","x":16.4,"y":77.9,"w":4.03,"h":11.04},{"t":"A","n":"11","type":"C1","face":"S","corner":"","x":21.62,"y":77.9,"w":4.03,"h":11.04},{"t":"A","n":"12","type":"A","face":"S","corner":"","x":25.72,"y":77.9,"w":2.52,"h":11.04},{"t":"A","n":"13","type":"B1a","face":"S","corner":"E","x":28.32,"y":77.9,"w":3.45,"h":11.04},{"t":"A","n":"14","type":"C","face":"P","corner":"E","x":27.93,"y":64.33,"w":4.03,"h":11.04},{"t":"B","n":"01","type":"A","face":"P","corner":"","x":32.78,"y":26.01,"w":2.53,"h":11.08},{"t":"B","n":"02","type":"B2b","face":"P","corner":"","x":35.38,"y":26.01,"w":3.47,"h":11.08},{"t":"B","n":"03","type":"B2","face":"P","corner":"","x":39.65,"y":26.01,"w":3.47,"h":11.08},{"t":"B","n":"04","type":"A","face":"P","corner":"","x":44.62,"y":26.01,"w":2.53,"h":11.08},{"t":"B","n":"05","type":"Ca","face":"P","corner":"E","x":47.22,"y":26.01,"w":4.04,"h":11.08},{"t":"B","n":"06","type":"B1","face":"N","corner":"E","x":45.77,"y":12.38,"w":3.47,"h":11.08},{"t":"B","n":"07","type":"A","face":"N","corner":"","x":43.14,"y":12.38,"w":2.53,"h":11.08},{"t":"B","n":"08","type":"Aa","face":"N","corner":"","x":40.54,"y":12.38,"w":2.53,"h":11.08},{"t":"B","n":"09","type":"A","face":"N","corner":"","x":37.95,"y":12.38,"w":2.53,"h":11.08},{"t":"B","n":"10","type":"C1a","face":"N","corner":"","x":33.81,"y":12.38,"w":4.04,"h":11.08},{"t":"B","n":"11","type":"C1","face":"N","corner":"","x":28.57,"y":12.38,"w":4.04,"h":11.08},{"t":"B","n":"12","type":"A","face":"N","corner":"","x":25.97,"y":12.38,"w":2.53,"h":11.08},{"t":"B","n":"13","type":"B1a","face":"N","corner":"W","x":22.42,"y":12.38,"w":3.47,"h":11.08},{"t":"B","n":"14","type":"C","face":"P","corner":"W","x":22.24,"y":26.01,"w":4.04,"h":11.08},{"t":"C","n":"01","type":"Aa","face":"P","corner":"","x":59.52,"y":64.6,"w":2.53,"h":11.07},{"t":"C","n":"02","type":"B2","face":"P","corner":"","x":62.12,"y":64.6,"w":3.46,"h":11.07},{"t":"C","n":"03","type":"B2b","face":"P","corner":"","x":66.39,"y":64.6,"w":3.47,"h":11.07},{"t":"C","n":"04","type":"Aa","face":"P","corner":"","x":71.35,"y":64.6,"w":2.53,"h":11.07},{"t":"C","n":"05","type":"C","face":"P","corner":"E","x":73.94,"y":64.6,"w":4.04,"h":11.07},{"t":"C","n":"06","type":"B1a","face":"S","corner":"E","x":72.5,"y":78.21,"w":3.46,"h":11.07},{"t":"C","n":"07","type":"Aa","face":"S","corner":"","x":69.87,"y":78.21,"w":2.53,"h":11.07},{"t":"C","n":"08","type":"A","face":"S","corner":"","x":67.27,"y":78.21,"w":2.53,"h":11.07},{"t":"C","n":"09","type":"Aa","face":"S","corner":"","x":64.68,"y":78.21,"w":2.53,"h":11.07},{"t":"C","n":"10","type":"C1","face":"S","corner":"","x":60.55,"y":78.21,"w":4.04,"h":11.07},{"t":"C","n":"11","type":"C1a","face":"S","corner":"","x":55.32,"y":78.21,"w":4.04,"h":11.07},{"t":"C","n":"12","type":"Aa","face":"S","corner":"","x":52.71,"y":78.21,"w":2.53,"h":11.07},{"t":"C","n":"13","type":"B1","face":"S","corner":"W","x":49.17,"y":78.21,"w":3.46,"h":11.07},{"t":"C","n":"14","type":"Ca","face":"P","corner":"W","x":48.99,"y":64.6,"w":4.04,"h":11.07},{"t":"D","n":"01","type":"A","face":"P","corner":"","x":77.39,"y":26.08,"w":2.51,"h":10.93},{"t":"D","n":"02","type":"B2b","face":"P","corner":"","x":79.96,"y":26.08,"w":3.43,"h":10.93},{"t":"D","n":"03","type":"B2","face":"P","corner":"","x":84.2,"y":26.08,"w":3.44,"h":10.93},{"t":"D","n":"04","type":"A","face":"P","corner":"","x":89.11,"y":26.08,"w":2.51,"h":10.93},{"t":"D","n":"05","type":"Ca","face":"P","corner":"E","x":91.69,"y":26.08,"w":4.0,"h":10.93},{"t":"D","n":"06","type":"B1","face":"N","corner":"E","x":90.25,"y":12.54,"w":3.43,"h":11.0},{"t":"D","n":"07","type":"A","face":"N","corner":"","x":87.64,"y":12.54,"w":2.51,"h":11.0},{"t":"D","n":"08","type":"Aa","face":"N","corner":"","x":85.07,"y":12.54,"w":2.51,"h":11.0},{"t":"D","n":"09","type":"A","face":"N","corner":"","x":82.5,"y":12.54,"w":2.51,"h":11.0},{"t":"D","n":"10","type":"C1a","face":"N","corner":"","x":78.41,"y":12.54,"w":4.0,"h":11.0},{"t":"D","n":"11","type":"C1","face":"N","corner":"","x":73.22,"y":12.54,"w":4.0,"h":11.0},{"t":"D","n":"12","type":"A","face":"N","corner":"","x":70.63,"y":12.54,"w":2.51,"h":11.0},{"t":"D","n":"13","type":"B1a","face":"N","corner":"W","x":67.12,"y":12.54,"w":3.43,"h":11.0},{"t":"D","n":"14","type":"C","face":"P","corner":"W","x":66.94,"y":26.08,"w":4.0,"h":10.93}];
+const BASE = { A: { plan: "A", size: "501 sq ft" }, B1: { plan: "B1", size: "681 sq ft" }, B2: { plan: "B2", size: "679 sq ft" },
+               C: { plan: "C", size: "791 sq ft" }, C1: { plan: "C1", size: "793 sq ft" } };
+const FACE_IMG = { P: "images/pool.jpeg", N: "images/towers.jpeg", S: "images/aerial.jpeg" };
+const FACE_COLOR = { P: "rgb(32,150,170)", N: "rgb(230,160,40)", S: "rgb(70,150,70)" };
+const spMap = document.getElementById("spMap");
+let spSel = null;
+SITE_UNITS.forEach((u, i) => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "sp-u f-" + u.face;
+  b.style.cssText = `left:${u.x}%;top:${u.y}%;width:${u.w}%;height:${u.h}%`;
+  b.dataset.i = i;
+  b.setAttribute("aria-label", `Tower ${u.t} unit ${u.n} type ${u.type}`);
+  spMap.appendChild(b);
+});
+spMap.addEventListener("click", e => {
+  const b = e.target.closest(".sp-u");
+  if (!b) return;
+  spMap.querySelectorAll(".sp-u.sel").forEach(x => x.classList.remove("sel"));
+  b.classList.add("sel");
+  spSel = +b.dataset.i;
+  renderSite();
+});
+document.querySelector(".sp-modes").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  document.querySelectorAll(".sp-modes button").forEach(x => x.classList.toggle("on", x === b));
+  spMap.dataset.mode = b.dataset.mode;
+});
+function renderSite() {
+  const t = T[lang], panel = document.getElementById("spPanel");
+  if (spSel === null) {
+    panel.innerHTML = `<div class="sp-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11.5V5a1.5 1.5 0 0 1 3 0v5.5m0-1a1.5 1.5 0 0 1 3 0v1m0 0a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L4 15.5a1.5 1.5 0 0 1 2.5-1.6L9 16"/></svg><p>${t.sp_pick}</p></div>`;
+    return;
+  }
+  const u = SITE_UNITS[spSel];
+  const base = BASE[u.type.replace(/[a-z]+$/, "")];
+  const q = t.wa_unit_q.replace("{t}", u.t).replace("{n}", u.n).replace("{type}", u.type);
+  panel.innerHTML = `
+    <div class="sp-view"><img src="${FACE_IMG[u.face]}" alt=""><small>${t.sp_ref}</small></div>
+    <div class="sp-body">
+      <h3>Tower ${u.t} · ${t.sp_unit} ${u.n}</h3>
+      <div class="sub">${t.u_type} ${u.type} · ${base.size}</div>
+      <div class="sp-face"><i style="background:${FACE_COLOR[u.face]}"></i><div><b>${t["face_" + u.face]}</b>${t["face_" + u.face + "_d"]}</div></div>
+      ${u.corner ? `<div class="sp-tags"><span>${t["corner_" + u.corner]}</span></div>` : ""}
+      <button type="button" class="sp-plan" data-src="images/plan-${base.plan}.jpg"><img src="images/plan-${base.plan}.jpg" alt="${t.sp_layout} ${base.plan}"></button>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="${waUrl(q)}"><svg><use href="#wa"/></svg>${t.sp_ask}</a>
+    </div>`;
+}
+document.getElementById("spPanel").addEventListener("click", e => {
+  const b = e.target.closest(".sp-plan");
+  if (!b) return;
+  lightbox.querySelector("img").src = b.dataset.src;
+  lightbox.hidden = false;
+});
+
+let tower = "A";
+function renderTower() {
+  const t = T[lang];
+  document.querySelectorAll(".tower-tabs button").forEach(b => b.classList.toggle("on", b.dataset.tower === tower));
+  const img = document.getElementById("towerImg");
+  img.src = "images/tower-" + tower + ".jpg";
+  img.alt = "Tower " + tower + " unit layout";
+  document.getElementById("towerAskTxt").textContent = t.tw_ask + " " + tower;
+  document.getElementById("towerAsk").href = waUrl(t.wa_tower + " " + tower);
+}
+document.querySelector(".tower-tabs").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (b) { tower = b.dataset.tower; renderTower(); }
+});
+document.querySelector(".tower-img").addEventListener("click", () => {
+  const img = document.getElementById("towerImg");
+  lightbox.querySelector("img").src = img.src;
+  lightbox.querySelector("img").alt = img.alt;
+  lightbox.hidden = false;
+});
+
+function closeLightbox() { lightbox.hidden = true; lightbox.classList.remove("gal"); lightbox.querySelector(".lb-cap").textContent = ""; }
+lightbox.addEventListener("click", () => {
+  if (lightbox.dataset.swiped) { delete lightbox.dataset.swiped; return; }
+  closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (lightbox.hidden) return;
+  if (e.key === "Escape") closeLightbox();
+  else if (lightbox.classList.contains("gal") && e.key === "ArrowRight") lbStep(1);
+  else if (lightbox.classList.contains("gal") && e.key === "ArrowLeft") lbStep(-1);
+});
+
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+  render();
+}));
+
+document.getElementById("leadForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = T[lang], f = e.target;
+  const name = f.name.value.trim();
+  if (!name) { alert(t.name_req); f.name.focus(); return; }
+  const lines = [t.wa_hello, "", t.wa_name + ": " + name];
+  if (f.phone.value.trim()) lines.push(t.wa_phone + ": " + f.phone.value.trim());
+  lines.push(t.wa_unit + ": " + (f.unit.value ? t.u_type + " " + f.unit.value : t.any));
+  lines.push(t.wa_purpose + ": " + f.purpose.options[f.purpose.selectedIndex].text);
+  if (f.msg.value.trim()) lines.push(t.wa_msg + ": " + f.msg.value.trim());
+  window.open(waUrl(lines.join("\n")), "_blank", "noopener");
+});
+
+render();
+</script>
+</body>
+</html>
